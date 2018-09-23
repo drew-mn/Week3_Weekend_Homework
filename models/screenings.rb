@@ -44,4 +44,8 @@ def update
   SqlRunner.run(sql, values)
 end
 
+def tickets_total()
+  return tickets.length
+end
+
 end

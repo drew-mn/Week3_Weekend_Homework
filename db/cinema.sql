@@ -4,8 +4,6 @@ DROP TABLE films;
 DROP TABLE customers;
 
 
-
-
 CREATE TABLE films(
   id SERIAL4 PRIMARY KEY,
   title VARCHAR(255),

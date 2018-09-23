@@ -15,6 +15,8 @@ require('pry')
 # film2.title = "Christopher Robin"
 # customer1.funds = 100
 # customer3.funds = 200
+# customer1.tickets_bought
+# film3.tickets_sold
 
 film1 = Films.new({'title' => 'A Simple Favour', 'price' => '10'})
 film1.save()

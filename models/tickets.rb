@@ -20,7 +20,6 @@ def save()
   @id = tickets['id'].to_i
 end
 
-
 def self.all
   sql = "SELECT * FROM tickets"
   tickets = SqlRunner.run(sql)
@@ -44,6 +43,5 @@ def update
   values = [@films_id, @customers_id, @screenings_id, @id]
   SqlRunner.run(sql, values)
 end
-
 
 end

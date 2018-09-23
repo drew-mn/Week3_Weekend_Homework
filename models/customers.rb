@@ -26,19 +26,9 @@ def films
     WHERE customers_id = $1;"
     values = [@id]
     films = SqlRunner.run(sql,values)
-    return films.map { |film_data| Films.new(film_data)}
+    return films.map {|film_data| Films.new(film_data)}
   end
 
-
-#   def funds_remaining
-#   sql = "SELECT films.price FROM films WHERE films_id = $1"
-#   values = [@id]
-#   price = SqlRunner.run(sql,values)
-#   price_hash_array = price.map{|price_data| price_data["price"].to_i}.reduce(0){|sum, num| sum + num}
-#
-#   funds_remaining = @funds -= price_hash_array
-#   return funds_remaining
-# end
 
 def self.all
   sql = "SELECT * FROM customers"
@@ -62,6 +52,10 @@ def update
   sql = "UPDATE customers SET (name, funds) = ($1, $2) WHERE id = $3"
   values = [@name, @funds, @id]
   SqlRunner.run(sql, values)
+end
+
+def tickets_bought()
+  return films.length
 end
 
 end
